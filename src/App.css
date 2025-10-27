@@ -1,14 +1,141 @@
 .app {
-  text-align: center;
-  padding: 2rem;
+	text-align: center;
+	padding: 2rem;
+	border: 1px solid red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	height: 100vh;
+	background-color: #02012b;
+}
+.app-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid blue;
+}
+.app-header-Dropdown-Content {
+	border: 1px solid red;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	height: 100%;
+	cursor: pointer;
+	background-color: #25253f;
+	padding: 10px 10px;
+	border-radius: 5px;
+}
+.app-header-Dropdown-Content img {
+	display: block;
+}
+.app-header-Dropdown-Content span {
+	color: #fff;
+}
+.app-header-Dropdown-Content-DownOutlined {
+	font-size: 12px;
+	color: #fff;
+}
+.app-content {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid green;
+	font-size: 32px;
+	font-weight: 600;
+	color: #fff;
+}
+.app-search {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid yellow;
+	gap: 16px;
+}
+.app-weather {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid purple;
+}
+.app-search-Input {
+	width: 100%;
+	background-color: #25253f;
+	border-radius: 10px;
+	padding: 10px 10px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
 }
 
-.app h1 {
-  color: #333;
-  margin-bottom: 1rem;
+/* 修改 Input 的边框和背景色 */
+.app-search .ant-input,
+.app-search .ant-input-affix-wrapper {
+	background-color: #25253f !important;
+	border: 1px solid transparent !important;
+	color: #fff !important;
 }
 
-.app p {
-  color: #666;
-  font-size: 1.1rem;
+/* hover 样式 - 鼠标悬停时 */
+.app-search .ant-input:hover,
+.app-search .ant-input-affix-wrapper:hover,
+.app-search .ant-input-affix-wrapper:hover .ant-input {
+	border-color: #4a4a6a !important;
+	background-color: #2d2d47 !important;
+}
+
+/* focus 样式 - 点击/聚焦时 */
+.app-search .ant-input-focused,
+.app-search .ant-input:focus,
+.app-search .ant-input-affix-wrapper-focused,
+.app-search .ant-input-affix-wrapper:focus,
+.app-search .ant-input-affix-wrapper-focused .ant-input {
+	border-color: #4a4a6a !important;
+	background-color: #2d2d47 !important;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 修改前缀图标的颜色 */
+.app-search .ant-input-prefix svg {
+	color: #fff !important;
+}
+
+/* 修改 allowClear 清空图标的颜色 */
+.app-search .ant-input-clear-icon {
+	color: #fff !important;
+}
+
+.app-search .ant-input-clear-icon:hover {
+	color: #fff !important;
+}
+
+/* placeholder 颜色 */
+.app-search .ant-input::-webkit-input-placeholder {
+	color: #888;
+}
+.app-search .ant-input:-moz-placeholder {
+	color: #888;
+}
+.app-search .ant-input::-moz-placeholder {
+	color: #888;
+}
+.app-search .ant-input:-ms-input-placeholder {
+	color: #888;
+}
+
+.app-search-Button {
+	width: 15%;
+	height: 100%;
+	background-color: #4559d6;
+	border-radius: 10px;
+	padding: 10px 10px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
 }
