@@ -1,0 +1,31 @@
+.container {
+	width: 100%;
+	height: 100%;
+	border: 1px solid red;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+.listItem {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 16px;
+	border: 1px solid blue;
+	background-color: #25253f;
+	border-radius: 12px;
+}
+.listItemTitle {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+}
+.listItemText {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+}

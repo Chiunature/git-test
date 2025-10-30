@@ -61,6 +61,7 @@
 	justify-content: center;
 	align-items: center;
 	border: 1px solid purple;
+	gap: 20px;
 }
 .app-search-Input {
 	width: 100%;
@@ -73,31 +74,24 @@
 	font-weight: 600;
 }
 
-/* 修改 Input 的边框和背景色 */
+/* 简化后的版本 */
 .app-search .ant-input,
 .app-search .ant-input-affix-wrapper {
-	background-color: #25253f !important;
-	border: 1px solid transparent !important;
-	color: #fff !important;
+	background-color: #25253f;
+	border: 1px solid transparent;
+	color: #fff;
 }
 
-/* hover 样式 - 鼠标悬停时 */
 .app-search .ant-input:hover,
-.app-search .ant-input-affix-wrapper:hover,
-.app-search .ant-input-affix-wrapper:hover .ant-input {
-	border-color: #4a4a6a !important;
-	background-color: #2d2d47 !important;
+.app-search .ant-input-affix-wrapper:hover {
+	border-color: #4a4a6a;
+	background-color: #2d2d47;
 }
 
-/* focus 样式 - 点击/聚焦时 */
-.app-search .ant-input-focused,
 .app-search .ant-input:focus,
-.app-search .ant-input-affix-wrapper-focused,
-.app-search .ant-input-affix-wrapper:focus,
-.app-search .ant-input-affix-wrapper-focused .ant-input {
-	border-color: #4a4a6a !important;
-	background-color: #2d2d47 !important;
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+.app-search .ant-input-affix-wrapper-focused {
+	border-color: #4a4a6a;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
 /* 修改前缀图标的颜色 */
@@ -138,4 +132,12 @@
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
+}
+.app-weather-left {
+	flex: 2;
+	border: 1px solid rgb(16, 255, 243);
+}
+.app-weather-right {
+	flex: 1;
+	border: 1px solid rgb(255, 0, 179);
 }

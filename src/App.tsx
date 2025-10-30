@@ -4,6 +4,8 @@ import units from "@/assets/images/icon-units.svg";
 import { Button, Input, Image, Dropdown } from "antd";
 import { DownOutlined, SmileOutlined, SearchOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
+import WeatherShow from "./components/WeatherShow/WeatherShow.tsx";
+import WeatherCondition from "./components/WeatherCondition/WeatherCondition.tsx";
 const unitsItems: MenuProps["items"] = [
 	{
 		key: "1",
@@ -59,7 +61,15 @@ function App() {
 					Search
 				</Button>
 			</div>
-			<div className="app-weather"></div>
+			<div className="app-weather">
+				<div className="app-weather-left">
+					<WeatherShow />
+					<WeatherCondition />
+				</div>
+				<div className="app-weather-right">
+					<WeatherShow />
+				</div>
+			</div>
 		</div>
 	);
 }
