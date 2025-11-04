@@ -1,0 +1,99 @@
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 20px;
+	min-width: 0;
+	overflow-x: hidden;
+}
+
+.listTitle {
+	color: #fff;
+	font-size: 24px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.listItemsContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 10px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	min-width: 0;
+	scrollbar-width: thin;
+	-webkit-overflow-scrolling: touch;
+}
+.listItem {
+	flex: 0 0 calc((100% - 60px) / 7);
+	min-width: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding: 20px 10px;
+	border-radius: 10px;
+	background-color: #25253f;
+}
+@media (max-width: 1024px) {
+	.listItemsContainer {
+		flex-wrap: wrap;
+		overflow-x: visible;
+	}
+
+	.listItem {
+		flex: 1 1 calc(33.333% - 7px);
+		min-width: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	.listItemsContainer {
+		flex-wrap: wrap;
+		overflow-x: visible;
+	}
+
+	.listItem {
+		flex: 1 1 calc(50% - 5px);
+		min-width: 120px;
+	}
+}
+
+@media (max-width: 480px) {
+	.listItem {
+		flex: 1 1 100%;
+	}
+}
+
+.listItemDay {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	text-align: center;
+}
+
+.listItemTemperature {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.listItemTemperatureMin {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+}

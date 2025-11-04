@@ -6,6 +6,8 @@ import { DownOutlined, SmileOutlined, SearchOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import WeatherShow from "./components/WeatherShow/WeatherShow.tsx";
 import WeatherCondition from "./components/WeatherCondition/WeatherCondition.tsx";
+import DailyForecast from "./components/DailyForecast/DailyForecast.tsx";
+import HourlyForecast from "./components/HourlyForecast/HourlyForecast.tsx";
 const unitsItems: MenuProps["items"] = [
 	{
 		key: "1",
@@ -65,9 +67,10 @@ function App() {
 				<div className="app-weather-left">
 					<WeatherShow />
 					<WeatherCondition />
+					<DailyForecast />
 				</div>
 				<div className="app-weather-right">
-					<WeatherShow />
+					<HourlyForecast />
 				</div>
 			</div>
 		</div>

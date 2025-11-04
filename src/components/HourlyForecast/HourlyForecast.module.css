@@ -1,0 +1,81 @@
+.container {
+	width: 100%;
+	min-height: 400px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 20px;
+	border-radius: 12px;
+	background-color: #25253f;
+}
+
+.listTitle {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	min-width: 0;
+	flex-shrink: 0;
+}
+
+.listTitle span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.listItemsContainer {
+	padding-right: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-height: 500px;
+	overflow-y: auto;
+	min-width: 0;
+	flex: 1;
+}
+
+.listItem {
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 5px;
+	border-radius: 10px;
+	background-color: #25253f;
+	min-width: 0;
+	flex-shrink: 0;
+}
+
+.listItemHour {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: left;
+	min-width: 60px;
+	flex-shrink: 0;
+}
+
+.listItemIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.listItemTemperature {
+	margin-left: auto;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: right;
+	flex-shrink: 0;
+}
