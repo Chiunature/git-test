@@ -32,11 +32,34 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-	max-height: 500px;
+	gap: 14px;
+	max-height: 450px;
 	overflow-y: auto;
 	min-width: 0;
 	flex: 1;
+	/* Firefox 滚动条样式 */
+	/* scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05); */
+}
+
+/* 自定义滚动条样式 - Webkit 浏览器 (Chrome, Safari, Edge) */
+.listItemsContainer::-webkit-scrollbar {
+	width: 6px;
+}
+
+.listItemsContainer::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 10px;
+}
+
+.listItemsContainer::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	transition: background 0.2s ease;
+}
+
+.listItemsContainer::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.3);
 }
 
 .listItem {
