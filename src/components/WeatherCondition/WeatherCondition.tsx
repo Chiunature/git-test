@@ -1,5 +1,17 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styles from "./WeatherCondition.module.css";
+
+interface WeatherConditionData {
+	humidity: string;
+	win_speed: string;
+	air_level: string;
+	pressure: string;
+}
+
+interface ListItem {
+	title: string;
+	text: string;
+}
 
 const List = ({ title, text }: { title: string; text: string }) => {
 	return (
@@ -9,22 +21,17 @@ const List = ({ title, text }: { title: string; text: string }) => {
 		</div>
 	);
 };
-const listItems = [
-	{
-		title: "Feels like",
-		text: "68℃",
-	},
-	{
-		title: "Humidity",
-		text: "40%",
-	},
-	{
-		title: "Wind",
-		text: "10km/h",
-	},
-	{ title: "Precipitation", text: "0 in" },
-];
-const WeatherCondition = () => {
+
+const WeatherCondition = ({ weatherConditionData }: { weatherConditionData: WeatherConditionData }) => {
+	const [listItems, setListItems] = useState<ListItem[]>([]);
+	useEffect(() => {
+		setListItems([
+			{ title: "湿度", text: weatherConditionData.humidity },
+			{ title: "风力", text: weatherConditionData.win_speed },
+			{ title: "质量情况", text: weatherConditionData.air_level },
+			{ title: "气压", text: weatherConditionData.pressure },
+		]);
+	}, [weatherConditionData]);
 	return (
 		<div className={styles.container}>
 			{listItems.map((item, index) => {

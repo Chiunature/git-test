@@ -1,78 +1,41 @@
+// App.tsx - 只负责组合和协调
 import "./App.css";
-import logo from "@/assets/images/logo.svg";
-import units from "@/assets/images/icon-units.svg";
-import { Button, Input, Image, Dropdown } from "antd";
-import { DownOutlined, SmileOutlined, SearchOutlined } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import WeatherShow from "./components/WeatherShow/WeatherShow.tsx";
-import WeatherCondition from "./components/WeatherCondition/WeatherCondition.tsx";
-import DailyForecast from "./components/DailyForecast/DailyForecast.tsx";
-import HourlyForecast from "./components/HourlyForecast/HourlyForecast.tsx";
-const unitsItems: MenuProps["items"] = [
-	{
-		key: "1",
-		label: (
-			<a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-				1st menu item
-			</a>
-		),
-	},
-	{
-		key: "2",
-		label: (
-			<a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-				2nd menu item (disabled)
-			</a>
-		),
-		icon: <SmileOutlined />,
-	},
-	{
-		key: "3",
-		label: (
-			<a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-				3rd menu item (disabled)
-			</a>
-		),
-	},
-];
+import { useWeatherData } from "./hooks/useWeatherData";
+import { useSearch } from "./hooks/useSearch";
+import { AppHeader } from "./components/AppHeader/AppHeader";
+import { AppSearch } from "./components/AppSearch/AppSearch";
+import { AppWeather } from "./components/AppWeather/AppWeather";
+
 function App() {
+	const {
+		weatherShowData,
+		weatherConditionData,
+		dailyForecastDatas,
+		hourlyForecastDatas,
+		loading,
+		processWeatherData,
+	} = useWeatherData();
+
+	const { inputSearchValue, handleInputChange } = useSearch();
+
+	const handleSearch = async () => {
+		if (!inputSearchValue.trim()) {
+			return;
+		}
+		await processWeatherData(inputSearchValue, undefined);
+	};
+
 	return (
 		<div className="app">
-			<div className="app-header">
-				<Image src={logo} alt="logo" preview={false} />
-				<div>
-					<Dropdown menu={{ items: unitsItems }}>
-						<div className="app-header-Dropdown-Content">
-							<Image src={units} alt="units" width={20} height={20} preview={false} />
-							<span>设置</span>
-							<DownOutlined className="app-header-Dropdown-Content-DownOutlined" />
-						</div>
-					</Dropdown>
-				</div>
-			</div>
+			<AppHeader />
 			<div className="app-content">How's the sky looking today?</div>
-			<div className="app-search">
-				<Input
-					size="large"
-					placeholder="Search for a city"
-					prefix={<SearchOutlined />}
-					className="app-search-Input"
-					allowClear
-				/>
-				<Button type="primary" className="app-search-Button">
-					Search
-				</Button>
-			</div>
-			<div className="app-weather">
-				<div className="app-weather-left">
-					<WeatherShow />
-					<WeatherCondition />
-					<DailyForecast />
-				</div>
-				<div className="app-weather-right">
-					<HourlyForecast />
-				</div>
-			</div>
+			<AppSearch value={inputSearchValue} onChange={handleInputChange} onSearch={handleSearch} loading={loading} />
+			<AppWeather
+				weatherShowData={weatherShowData}
+				weatherConditionData={weatherConditionData}
+				dailyForecastDatas={dailyForecastDatas}
+				hourlyForecastDatas={hourlyForecastDatas}
+			/>
 		</div>
 	);
 }
